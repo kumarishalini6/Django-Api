@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <div class="container border shadow mt-4 p-3">
+        <table class="table">
+
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Password</th>
+                <th scope="col">Contact No.</th>
+                <th scope="col">Action</th>
+            </tr>
+
+            {% for list in emp %}
+                <tr>
+                    <td>{{ list.id }}</td>
+                    <td>{{ list.name }}</td>
+                    <td>{{ list.email }}</td>
+                    <td>{{ list.password }}</td>
+                    <td>{{ list.contact_no }}</td>
+                <td>
+                    <a href="/edit/{{ list.id }}">Edit</a> &nbsp; &nbsp; &nbsp; &nbsp;
+
+                    <a href="/delete/{{ list.id }}">Delete</a>
+
+                </td>
+
+                </tr>
+
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}
